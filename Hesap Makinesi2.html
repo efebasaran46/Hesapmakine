@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+  <head>
+    <title>Hesap Makinesi</title>
+    <script>
+      islem = null
+      function Btn(op){
+        islem = op ;
+      }
+      function Hesapla() { 
+        const ilksayi = Number(document.getElementById("ilksayi").value);
+         const ikincisayi = Number(document.getElementById("ikincisayi").value)
+      let sonuc;
+        if (islem === "+") { sonuc = ilksayi + ikincisayi 
+        document.getElementById("sonuc").innerText = "sonuc: "+ (sonuc)
+      }
+     else if (islem === "-") { sonuc = ilksayi - ikincisayi
+     document.getElementById("sonuc").innerText = "sonuc: "+ (sonuc)
+     }
+      else if (islem === "*") { sonuc = ilksayi*ikincisayi 
+      document.getElementById("sonuc").innerText = "sonuc: "+ (sonuc)}
+      else if (islem === "/") { sonuc = ilksayi/ikincisayi 
+      document.getElementById("sonuc").innerText = "sonuc: "+ (sonuc)}
+      }
+    </script>
+    <style>
+    div { color: blue;}
+    button{ width: 20%;
+    height: 4%;
+      font-size: 20px;
+      border-radius: 10px;
+    }
+      #Hesapla { width: 55%; /* btn genişlik*/
+      height: 5%; /* btn yükseklik*/
+      font-size: 25px;
+      border-radius: 20px;
+      font-weight:bold;
+      background-color: red;
+      color: gold;
+      transition: background-color 2s ease, color 2s ease;
+      }
+      #Hesapla:hover{ color:green;
+        background-color: silver;
+        transform: scale(0.8);
+      }
+      #ilksayi{ height: 5%;
+      width: 100%;
+      
+      font-size: 40px;
+      border-radius: 2px;
+      }
+      #ikincisayi{ height: 5%;
+      width: 100%;
+      font-size: 40px;
+      border-radius: 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="number" placeholder="ilk sayi" id="ilksayi">
+    <input type="number" placeholder="ikinci sayi" id="ikincisayi">
+    <div id="Sonuc">
+     <button onclick="Btn('+')">+</button>
+    <button onclick="Btn('-')">-</button>
+    <button onclick="Btn('*')">x</button>
+    <button onclick="Btn('/')">/</button>
+   
+    </div>
+    <div id="sonuc"></div>
+    <div>
+ <button onclick="Hesapla()" id="Hesapla">Sonuc</button>
+    </div>
+    
+  </body>
+</html>
